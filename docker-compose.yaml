@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+  app:
+    container_name: tg_to_vk
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: sh -c "poetry run python3 -m src"
+    volumes:
+      - .:/usr/src/app
+      - ./relations.json:/usr/src/app/relations.json
+    restart: always
