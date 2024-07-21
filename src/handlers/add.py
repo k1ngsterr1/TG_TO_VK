@@ -82,7 +82,6 @@ async def add(m: Message, state: FSMContext, relations: Relations):
 
 @router.message(FSM.wait_post_choice)
 async def add(m: Message, state: FSMContext, relations: Relations):
-    list_relations = []
     data = await state.get_data()
     tg_channels = data["tg_channels"].split(",")
     vk_all_groups = data["vk_all_groups"]
@@ -95,7 +94,6 @@ async def add(m: Message, state: FSMContext, relations: Relations):
             vk_select_group = int(vk_select_group)  # Convert to integer
             vk_group = vk_all_groups[vk_select_group]
             where_to_post = int(m.text)
-            list_relations.append((tg_channel, vk_group, where_to_post))
             text_relations += f"\n{tg_channel} -> {vk_group[0]}"
             relations.add(tg_channel, vk_group, where_to_post)  # Add new_tuple here
 

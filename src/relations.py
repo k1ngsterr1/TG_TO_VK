@@ -13,6 +13,9 @@ class Relations:
     def add(self, tg_channel: str, vk_group: tuple, where_to_post: int) -> dict:
         data = self.read()
         if data.get(tg_channel):
+            for group in data[tg_channel]:
+                if group[0][0] == vk_group[0]:
+                    data[tg_channel].remove(group)                
             data[tg_channel].append((vk_group, where_to_post))
         else:
             data[tg_channel] = [(vk_group, where_to_post)]
