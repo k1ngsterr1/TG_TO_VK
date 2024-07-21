@@ -4,8 +4,8 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 from httpx import AsyncClient
 
-from ..fsm import FSM
-from ..relations import Relations
+from fsm import FSM
+from relations import Relations
 
 router = Router()
 

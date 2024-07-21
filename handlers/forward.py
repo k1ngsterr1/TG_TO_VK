@@ -4,7 +4,7 @@ import httpx
 import random
 from aiogram import Router, Bot
 from aiogram.types import Message
-from ..relations import Relations
+from relations import Relations
 from urllib.parse import quote
 
 router = Router()

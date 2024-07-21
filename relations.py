@@ -1,6 +1,6 @@
 import json
 
-from .cfg import DIR_RELATIONS
+from cfg import DIR_RELATIONS
 
 
 class Relations:
